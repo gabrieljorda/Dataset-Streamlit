@@ -3,7 +3,7 @@ import plotly.express as px
 from dataset import df
 from utils import format_number
 from graficos import (grafico_map_estado , grafico_rec_mensal , 
-                      grafico_rec_estado , grafico_rec_categoria)
+                      grafico_rec_estado , grafico_rec_categoria, grafico_rec_vendedores)
 
 st.set_page_config(layout="wide")
 st.title("Dashboard de Vendas ")
@@ -24,4 +24,8 @@ with aba2:
         st.plotly_chart(grafico_rec_mensal, use_container_width=True)
         st.plotly_chart(grafico_rec_categoria, use_container_width=True)
     
+with aba3:
+    coluna1 , coluna2 = st.columns(2)
+    with coluna1:
+        st.plotly_chart(grafico_rec_vendedores)
     
